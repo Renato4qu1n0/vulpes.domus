@@ -1,8 +1,12 @@
-mport type { NextConfig } from "next";
+import type { NextConfig } from "next";
+
+const basePath = process.env.PAGES_BASE_PATH || "";
 
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
+
+  basePath,
 
   images: {
     unoptimized: true,
