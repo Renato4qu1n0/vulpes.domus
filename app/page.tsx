@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Rouge_Script } from "next/font/google";
 import ProjectCarousel from "./ProjectCarousel";
 import CopyEmailButton from "./CopyEmailButton";
+import { publicAssetPath } from "./publicAssetPath";
 
 const rouge = Rouge_Script({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
 
             <Image
-              src="/logo-cabecalho.png"
+              src={publicAssetPath("/logo-cabecalho.webp")}
               width={75}
               height={75}
               alt="Logo"
@@ -128,7 +129,7 @@ export default function Home() {
             <div className="relative bg-[#e8e2db] rounded-[40px] h-[500px] flex items-center justify-center shadow-2xl">
 
               <Image
-                src="/logo.png"
+                src={publicAssetPath("/logo.webp")}
                 width={800}
                 height={800}
                 alt="Logo"
@@ -312,7 +313,7 @@ export default function Home() {
               className="flex items-center gap-2 rounded-sm text-[#81796d] transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f]"
             >
               <Image
-                src="/aqs-group-logo.png"
+                src={publicAssetPath("/aqs-group-logo.png")}
                 width={30}
                 height={30}
                 alt="AqS Group"

@@ -2,30 +2,31 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { publicAssetPath } from "./publicAssetPath";
 
 const projectImages = [
   {
-    src: "/images/CENA 11 FINAL.effectsResult (1).png",
+    src: publicAssetPath("/images/cena-11-final.webp"),
     alt: "Vista externa principal do Complexo Educacional",
   },
   {
-    src: "/images/CENA 12 FINAL.effectsResult.png",
+    src: publicAssetPath("/images/cena-12-final.webp"),
     alt: "Área externa de convivência do Complexo Educacional",
   },
   {
-    src: "/images/BIBLIOTECA (1).png",
+    src: publicAssetPath("/images/biblioteca.webp"),
     alt: "Biblioteca com estantes e espaços de leitura",
   },
   {
-    src: "/images/2.effectsResult.png",
+    src: publicAssetPath("/images/espaco-colaborativo.webp"),
     alt: "Espaço colaborativo com mesa orgânica e jardim vertical",
   },
   {
-    src: "/images/BRINQUEDOTECA.png",
+    src: publicAssetPath("/images/brinquedoteca.webp"),
     alt: "Brinquedoteca com tenda e área de brincadeiras",
   },
   {
-    src: "/images/SALA DE AULA.png",
+    src: publicAssetPath("/images/sala-de-aula.webp"),
     alt: "Sala de aula com mesas de madeira",
   },
 ];
