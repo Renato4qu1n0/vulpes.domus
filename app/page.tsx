@@ -11,34 +11,35 @@ const rouge = Rouge_Script({
 
 export default function Home() {
   return (
-    <main className="bg-[#f5f2ef] text-[#3d3428] min-h-screen pt-20">
+    <main className="min-h-screen overflow-x-clip bg-[#f5f2ef] pt-[72px] text-[#3d3428] md:pt-20">
 
       {/* HEADER */}
-      <header className="fixed top-0 left-0 w-full bg-[#f5f2ef]/90 backdrop-blur-md z-50 border-b border-[#ddd6cf] h-20">
+      <header className="fixed left-0 top-0 z-50 h-[72px] w-full border-b border-[#ddd6cf] bg-[#f5f2ef]/95 backdrop-blur-md md:h-20">
 
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 h-full">
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 md:px-12">
 
-          <div className="flex items-center gap-4">
+          <div className="flex min-w-0 items-center gap-2 sm:gap-4">
 
             <Image
               src={publicAssetPath("/logo-cabecalho.png")}
               width={75}
               height={75}
               alt="Logo"
+              className="h-11 w-11 shrink-0 object-contain sm:h-14 sm:w-14 md:h-[75px] md:w-[75px]"
             />
 
             <div>
-              <h1 className={`${rouge.className} text-5xl text-[#6f552d]`}>
+              <h1 className={`${rouge.className} whitespace-nowrap text-3xl leading-none text-[#6f552d] sm:text-4xl md:text-5xl`}>
                 Vulpes Domus</h1>
 
-              <p className="text-xs tracking-[0.2em] text-[#8a7a61] uppercase">
+              <p className="whitespace-nowrap text-[9px] tracking-[0.12em] text-[#8a7a61] uppercase sm:text-[10px] sm:tracking-[0.2em] md:text-xs">
                 Arquitetura & Interiores
               </p>
             </div>
 
           </div>
 
-          <div className="flex items-center gap-5">
+          <div className="flex shrink-0 items-center gap-3 sm:gap-5">
             <nav className="hidden md:flex gap-10 uppercase text-sm tracking-[0.2em]">
               <a href="#inicio">Início</a>
               <a href="#projetos">Projetos</a>
@@ -46,7 +47,7 @@ export default function Home() {
               <a href="#contato">Contato</a>
             </nav>
 
-            <div className="flex items-center gap-4 border-l border-[#ddd6cf] pl-5">
+            <div className="flex items-center gap-3 border-l border-[#ddd6cf] pl-3 sm:gap-4 sm:pl-5">
               <a
                 href="https://www.instagram.com/vulpes.domus/"
                 target="_blank"
@@ -79,33 +80,33 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section id="inicio" className="min-h-[calc(100vh-5rem)] flex items-center justify-center px-6 scroll-mt-20">
+      <section id="inicio" className="scroll-mt-[72px] px-5 py-12 sm:px-6 sm:py-16 md:min-h-[calc(100vh-5rem)] md:scroll-mt-20 md:py-10">
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="mx-auto grid w-full max-w-6xl min-w-0 items-center gap-10 md:grid-cols-2 md:gap-16">
 
           {/* TEXTO */}
           <div>
 
-            <p className="uppercase tracking-[0.3em] text-sm text-[#8a7a61] mb-6">
+            <p className="mb-5 text-xs uppercase tracking-[0.22em] text-[#8a7a61] sm:mb-6 sm:text-sm sm:tracking-[0.3em]">
               Arquitetura contemporânea
             </p>
 
-            <h2 className="text-5xl md:text-7xl leading-tight font-light">
+            <h2 className="text-4xl font-light leading-[1.12] sm:text-5xl md:text-7xl">
               Projetos sofisticados para espaços únicos.
             </h2>
 
-            <p className="mt-8 text-[#6e675f] leading-8 text-lg max-w-xl">
+            <p className="mt-6 max-w-xl text-base leading-7 text-[#6e675f] sm:mt-8 sm:text-lg sm:leading-8">
               Criamos ambientes elegantes, funcionais e atemporais,
               unindo estética, conforto e identidade em cada projeto.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-col items-stretch gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center">
 
               <a
                 href="https://wa.me/5511960759135"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 shrink-0 items-center justify-center gap-3 rounded-sm border border-[#6f552d] bg-[#6f552d] px-5 py-3 text-xs uppercase tracking-[0.14em] text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d] md:text-sm"
+                className="inline-flex min-h-12 shrink-0 items-center justify-center gap-3 rounded-sm border border-[#6f552d] bg-[#6f552d] px-4 py-3 text-[11px] uppercase tracking-[0.12em] text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d] sm:px-5 sm:text-xs sm:tracking-[0.14em] md:text-sm"
               >
                 Solicite um orçamento
                 <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" fill="currentColor" aria-hidden="true">
@@ -126,13 +127,14 @@ export default function Home() {
 
             <div className="absolute inset-0 bg-[#c8b69a] rounded-[40px] rotate-3"></div>
 
-            <div className="relative bg-[#e8e2db] rounded-[40px] h-[500px] flex items-center justify-center shadow-2xl">
+            <div className="relative flex h-[300px] items-center justify-center overflow-hidden rounded-[28px] bg-[#e8e2db] shadow-2xl sm:h-[400px] sm:rounded-[36px] md:h-[500px] md:rounded-[40px]">
 
               <Image
                 src={publicAssetPath("/logo.png")}
                 width={800}
                 height={800}
                 alt="Logo"
+                className="h-auto w-[min(82%,420px)] object-contain"
               />
 
             </div>
@@ -144,9 +146,9 @@ export default function Home() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="bg-white py-28 px-6 md:px-12 scroll-mt-20">
+      <section id="sobre" className="scroll-mt-[72px] bg-white px-5 py-16 sm:px-6 sm:py-20 md:scroll-mt-20 md:px-12 md:py-28">
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:gap-20">
 
           <div>
 
@@ -154,7 +156,7 @@ export default function Home() {
               Sobre nós
             </p>
 
-            <h3 className="text-4xl font-light mb-8">
+            <h3 className="mb-6 text-3xl font-light sm:mb-8 sm:text-4xl">
               Arquitetura com personalidade e propósito.
             </h3>
 
@@ -185,13 +187,13 @@ export default function Home() {
       </section>
 
       {/* PROJETOS */}
-      <section id="projetos" className="scroll-mt-20 bg-[#f8f5f1] px-6 py-28 md:px-12">
+      <section id="projetos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-16 sm:px-6 sm:py-20 md:scroll-mt-20 md:px-12 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
+          <div className="mb-10 sm:mb-16">
             <p className="mb-4 uppercase tracking-[0.3em] text-sm text-[#8a7a61]">
               Projetos
             </p>
-            <h3 className="text-5xl font-light">
+            <h3 className="text-4xl font-light sm:text-5xl">
               Ambientes que inspiram.
             </h3>
           </div>
@@ -200,16 +202,16 @@ export default function Home() {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="scroll-mt-20 py-32 px-6 md:px-12 bg-[#3d3428] text-white">
+      <section id="contato" className="scroll-mt-[72px] bg-[#3d3428] px-5 py-20 text-white sm:px-6 sm:py-24 md:scroll-mt-20 md:px-12 md:py-32">
 
-        <div className="max-w-6xl mx-auto grid items-center gap-14 md:grid-cols-2 md:gap-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-20">
           <div>
 
             <p className="uppercase tracking-[0.3em] text-sm text-[#d0bea0] mb-6">
               Contato
             </p>
 
-            <h3 className="text-4xl font-light leading-tight md:text-5xl">
+            <h3 className="text-3xl font-light leading-tight sm:text-4xl md:text-5xl">
               Vamos conversar sobre o seu projeto?
             </h3>
 
@@ -275,7 +277,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#2c241c] text-[#a59a8b] py-10 px-6 text-center text-sm tracking-[0.2em]">
+      <footer className="bg-[#2c241c] px-5 py-10 text-center text-xs tracking-[0.12em] text-[#a59a8b] sm:px-6 sm:text-sm sm:tracking-[0.2em]">
         <div className="flex flex-col items-center gap-5">
           <p>VULPES DOMUS © 2026 — Todos os direitos reservados</p>
           <div className="flex items-center gap-5">

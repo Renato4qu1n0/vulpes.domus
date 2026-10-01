@@ -68,12 +68,12 @@ export default function ProjectCarousel() {
         setTouchStart(null);
       }}
     >
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
         {visibleImages.map((imageIndex, slotIndex) => {
           const image = projectImages[imageIndex];
           return (
             <div
-              className="relative h-[360px] overflow-hidden rounded-2xl bg-[#ddd6cf] md:h-[420px] md:rounded-[18px]"
+              className="relative h-[min(112vw,420px)] min-h-[280px] overflow-hidden rounded-2xl bg-[#ddd6cf] sm:h-[360px] lg:h-[420px] lg:rounded-[18px]"
               key={`${image.src}-${slotIndex}`}
             >
               <Image
