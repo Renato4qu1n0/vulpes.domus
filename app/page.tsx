@@ -21,7 +21,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
 
             <Image
-              src={publicAssetPath("/logo-cabecalho.webp")}
+              src={publicAssetPath("/logo-cabecalho.png")}
               width={75}
               height={75}
               alt="Logo"
@@ -129,7 +129,7 @@ export default function Home() {
             <div className="relative bg-[#e8e2db] rounded-[40px] h-[500px] flex items-center justify-center shadow-2xl">
 
               <Image
-                src={publicAssetPath("/logo.webp")}
+                src={publicAssetPath("/logo.png")}
                 width={800}
                 height={800}
                 alt="Logo"

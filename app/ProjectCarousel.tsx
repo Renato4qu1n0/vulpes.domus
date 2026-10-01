@@ -6,27 +6,27 @@ import { publicAssetPath } from "./publicAssetPath";
 
 const projectImages = [
   {
-    src: publicAssetPath("/images/cena-11-final.webp"),
+    src: publicAssetPath("/images/CENA 11 FINAL.effectsResult (1).png"),
     alt: "Vista externa principal do Complexo Educacional",
   },
   {
-    src: publicAssetPath("/images/cena-12-final.webp"),
+    src: publicAssetPath("/images/CENA 12 FINAL.effectsResult.png"),
     alt: "Área externa de convivência do Complexo Educacional",
   },
   {
-    src: publicAssetPath("/images/biblioteca.webp"),
+    src: publicAssetPath("/images/BIBLIOTECA (1).png"),
     alt: "Biblioteca com estantes e espaços de leitura",
   },
   {
-    src: publicAssetPath("/images/espaco-colaborativo.webp"),
+    src: publicAssetPath("/images/2.effectsResult.png"),
     alt: "Espaço colaborativo com mesa orgânica e jardim vertical",
   },
   {
-    src: publicAssetPath("/images/brinquedoteca.webp"),
+    src: publicAssetPath("/images/BRINQUEDOTECA.png"),
     alt: "Brinquedoteca com tenda e área de brincadeiras",
   },
   {
-    src: publicAssetPath("/images/sala-de-aula.webp"),
+    src: publicAssetPath("/images/SALA DE AULA.png"),
     alt: "Sala de aula com mesas de madeira",
   },
 ];
