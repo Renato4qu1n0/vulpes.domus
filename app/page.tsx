@@ -331,7 +331,7 @@ export default function Home() {
                 alt="AqS Group"
                 className="rounded-sm"
               />
-              <span className="tracking-[0.04em]">AqS Group · GitHub</span>
+              <span className="tracking-[0.04em]">Powered by AqS Group</span>
             </a>
           </div>
         </div>
