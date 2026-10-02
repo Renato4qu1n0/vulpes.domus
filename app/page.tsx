@@ -212,19 +212,69 @@ export default function Home() {
             </p>
           </div>
 
-          <ol className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             {[
-              "Projetos arquitetônicos",
-              "Projetos de interiores",
-              "Regularização de imóveis",
-              "Vistoria de imóveis",
+              {
+                title: "Serviços de Projeto",
+                items: [
+                  "Execução Interiores",
+                  "Consultoria Arquitetônica + Levantamento",
+                  "Consultoria de Interiores + Levantamento",
+                  "Projeto de Interiores + Levantamento",
+                  "Projeto de Marcenaria + Levantamento",
+                ],
+              },
+              {
+                title: "Legalização",
+                items: [
+                  "Regularização de Imóvel Residencial",
+                  "Regularização de Imóvel Comercial",
+                  "Regularização de Projeto Aprovado",
+                  "Aprovação de Projeto Arquitetônico",
+                  "Aprovação de Reformas e Ampliações",
+                  "Habite-se/Certificado de Conclusão",
+                  "Acompanhamento de Processos Administrativos",
+                  "Atualização de IPTU",
+                  "Averbação em Cartório",
+                  "Levantamento Arquitetônico",
+                  "Levantamento Fotográfico",
+                  "EVTL",
+                  "Desdobro/Desmembramento de Lotes",
+                  "Unificação de Lotes",
+                  "Retificação de Área",
+                  "Alteração Cadastral",
+                  "Mudança de Uso",
+                  "AVCB",
+                  "CLCB",
+                  "Vigilância Sanitária",
+                  "CETESB",
+                  "Licenciamento Ambiental",
+                  "Vistoria de Imóveis Entregue pela Construtora",
+                  "Laudo Pericial de Imóvel",
+                  "Pré-Análise COMAR",
+                ],
+              },
+              { title: "Regularização de imóveis", items: ["Regularização de imóveis"] },
+              { title: "Vistoria de imóveis", items: ["Vistoria de imóveis"] },
             ].map((service, index) => (
-              <li key={service} className="flex min-h-28 items-start gap-5 border border-[#ddd6cf] bg-white p-6 sm:p-8">
-                <span className="pt-1 text-sm tracking-[0.2em] text-[#8a7a61]">0{index + 1}</span>
-                <h4 className="text-xl font-light leading-snug text-[#3d3428] sm:text-2xl">{service}</h4>
-              </li>
+              <details key={service.title} className="group border border-[#ddd6cf] bg-white open:border-[#c2a46f]">
+                <summary className="flex min-h-28 cursor-pointer list-none items-center justify-between gap-5 p-6 sm:p-8 [&::-webkit-details-marker]:hidden">
+                  <span className="flex items-start gap-5">
+                    <span className="pt-1 text-sm tracking-[0.2em] text-[#8a7a61]">0{index + 1}</span>
+                    <span className="text-xl font-light leading-snug text-[#3d3428] sm:text-2xl">{service.title}</span>
+                  </span>
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0 text-[#8a7a61] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </summary>
+                <ul className="space-y-3 border-t border-[#eee9e3] px-6 py-5 pl-[4.5rem] sm:px-8 sm:pl-[5.5rem]">
+                  {service.items.map((item) => (
+                    <li key={item} className="list-disc text-sm leading-6 text-[#6e675f] marker:text-[#c2a46f] sm:text-base">{item}</li>
+                  ))}
+                </ul>
+              </details>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
 
