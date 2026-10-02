@@ -91,7 +91,7 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section id="inicio" className="scroll-mt-[72px] px-5 py-5 md:scroll-mt-20">
+      <section id="inicio" className="scroll-mt-[72px] px-5 py-10 md:scroll-mt-20">
 
         <div className="mx-auto grid w-full max-w-6xl min-w-0 items-center gap-5 md:grid-cols-2">
 
@@ -157,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="scroll-mt-[72px] bg-white px-5 py-5 md:scroll-mt-20">
+      <section id="sobre" className="scroll-mt-[72px] bg-white px-5 py-10 md:scroll-mt-20">
 
         <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2">
 
@@ -198,8 +198,8 @@ export default function Home() {
       </section>
 
       {/* SERVIÇOS */}
-      <section id="servicos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-5 md:scroll-mt-20">
-        <div className="mx-auto max-w-7xl">
+      <section id="servicos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-10 md:scroll-mt-20">
+        <div className="mx-auto max-w-6xl">
           <div className="mb-5 max-w-2xl">
             <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#8a7a61]">
               Nossos serviços
@@ -279,8 +279,8 @@ export default function Home() {
       </section>
 
       {/* PROJETOS */}
-      <section id="projetos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-5 md:scroll-mt-20">
-        <div className="mx-auto max-w-7xl">
+      <section id="projetos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-10 md:scroll-mt-20">
+        <div className="mx-auto max-w-6xl">
           <div className="mb-5">
             <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#8a7a61]">
               Projetos
@@ -294,7 +294,7 @@ export default function Home() {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="scroll-mt-[72px] bg-[#3d3428] px-5 py-5 text-white md:scroll-mt-20">
+      <section id="contato" className="scroll-mt-[72px] bg-[#3d3428] px-5 py-10 text-white md:scroll-mt-20">
 
         <div className="mx-auto grid max-w-6xl items-center gap-5 md:grid-cols-2">
           <div>
@@ -369,7 +369,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#2c241c] px-5 py-5 text-center text-xs tracking-[0.12em] text-[#a59a8b] sm:text-sm sm:tracking-[0.2em]">
+      <footer className="bg-[#2c241c] px-5 py-10 text-center text-xs tracking-[0.12em] text-[#a59a8b] sm:text-sm sm:tracking-[0.2em]">
         <div className="flex flex-col items-center gap-5">
           <p>VULPES DOMUS © 2026 — Todos os direitos reservados</p>
           <div className="flex items-center gap-5">
