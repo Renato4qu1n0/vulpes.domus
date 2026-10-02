@@ -157,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="scroll-mt-[72px] bg-white px-5 py-16 sm:px-6 sm:py-20 md:scroll-mt-20 md:px-12 md:py-28">
+      <section id="sobre" className="scroll-mt-[72px] bg-white px-5 py-14 sm:px-6 sm:py-16 md:scroll-mt-20 md:px-12 md:py-24">
 
         <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:gap-20">
 
@@ -198,9 +198,9 @@ export default function Home() {
       </section>
 
       {/* SERVIÇOS */}
-      <section id="servicos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-16 sm:px-6 sm:py-20 md:scroll-mt-20 md:px-12 md:py-28">
+      <section id="servicos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-14 sm:px-6 sm:py-16 md:scroll-mt-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 max-w-2xl sm:mb-14">
+          <div className="mb-8 max-w-2xl sm:mb-10">
             <p className="mb-4 uppercase tracking-[0.3em] text-sm text-[#8a7a61]">
               Nossos serviços
             </p>
@@ -279,9 +279,9 @@ export default function Home() {
       </section>
 
       {/* PROJETOS */}
-      <section id="projetos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-16 sm:px-6 sm:py-20 md:scroll-mt-20 md:px-12 md:py-28">
+      <section id="projetos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-14 sm:px-6 sm:py-16 md:scroll-mt-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 sm:mb-16">
+          <div className="mb-8 sm:mb-10">
             <p className="mb-4 uppercase tracking-[0.3em] text-sm text-[#8a7a61]">
               Projetos
             </p>
@@ -294,7 +294,7 @@ export default function Home() {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="scroll-mt-[72px] bg-[#3d3428] px-5 py-20 text-white sm:px-6 sm:py-24 md:scroll-mt-20 md:px-12 md:py-32">
+      <section id="contato" className="scroll-mt-[72px] bg-[#3d3428] px-5 py-14 text-white sm:px-6 sm:py-16 md:scroll-mt-20 md:px-12 md:py-24">
 
         <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-20">
           <div>
