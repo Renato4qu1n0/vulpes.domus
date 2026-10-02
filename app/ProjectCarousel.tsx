@@ -68,7 +68,7 @@ export default function ProjectCarousel() {
         setTouchStart(null);
       }}
     >
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {visibleImages.map((imageIndex, slotIndex) => {
           const image = projectImages[imageIndex];
           return (
@@ -89,7 +89,7 @@ export default function ProjectCarousel() {
         })}
       </div>
 
-      <div className="mt-8 flex items-center justify-center gap-8">
+      <div className="mt-5 flex items-center justify-center gap-5">
         <button
           aria-label="Imagens anteriores"
           className="grid h-11 w-11 place-items-center rounded-full border border-[#8a7a61] text-xl text-[#6f552d] transition hover:bg-[#6f552d] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d]"

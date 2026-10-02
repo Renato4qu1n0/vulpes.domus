@@ -16,9 +16,9 @@ export default function Home() {
       {/* HEADER */}
       <header className="fixed left-0 top-0 z-50 h-[72px] w-full border-b border-[#ddd6cf] bg-[#f5f2ef]/95 backdrop-blur-md md:h-20">
 
-        <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 md:px-12">
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-5 sm:gap-5">
 
-          <div className="flex min-w-0 items-center gap-2 sm:gap-4">
+          <div className="flex min-w-0 items-center gap-2 sm:gap-5">
 
             <Image
               src={publicAssetPath("/logo-cabecalho.png")}
@@ -40,7 +40,7 @@ export default function Home() {
           </div>
 
           <div className="flex shrink-0 items-center gap-3 sm:gap-5">
-            <nav className="hidden md:flex gap-10 uppercase text-sm tracking-[0.2em]">
+            <nav className="hidden gap-5 uppercase text-sm tracking-[0.2em] md:flex">
               <a href="#inicio">Início</a>
               <a href="#projetos">Projetos</a>
               <a href="#sobre">Sobre</a>
@@ -48,7 +48,7 @@ export default function Home() {
               <a href="#contato">Contato</a>
             </nav>
 
-            <div className="flex items-center gap-3 border-l border-[#ddd6cf] pl-3 sm:gap-4 sm:pl-5">
+            <div className="flex items-center gap-3 border-l border-[#ddd6cf] pl-3 sm:gap-5 sm:pl-5">
               <a
                 href="https://www.instagram.com/vulpes.domus/"
                 target="_blank"
@@ -91,14 +91,14 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section id="inicio" className="scroll-mt-[72px] px-5 py-12 sm:px-6 sm:py-16 md:min-h-[calc(100vh-5rem)] md:scroll-mt-20 md:py-10">
+      <section id="inicio" className="scroll-mt-[72px] px-5 py-5 md:scroll-mt-20">
 
-        <div className="mx-auto grid w-full max-w-6xl min-w-0 items-center gap-10 md:grid-cols-2 md:gap-16">
+        <div className="mx-auto grid w-full max-w-6xl min-w-0 items-center gap-5 md:grid-cols-2">
 
           {/* TEXTO */}
           <div>
 
-            <p className="mb-5 text-xs uppercase tracking-[0.22em] text-[#8a7a61] sm:mb-6 sm:text-sm sm:tracking-[0.3em]">
+            <p className="mb-5 text-xs uppercase tracking-[0.22em] text-[#8a7a61] sm:text-sm sm:tracking-[0.3em]">
               Arquitetura contemporânea
             </p>
 
@@ -106,18 +106,18 @@ export default function Home() {
               Projetos sofisticados para espaços únicos.
             </h2>
 
-            <p className="mt-6 max-w-xl text-base leading-7 text-[#6e675f] sm:mt-8 sm:text-lg sm:leading-8">
+            <p className="mt-5 max-w-xl text-base leading-7 text-[#6e675f] sm:text-lg sm:leading-8">
               Criamos ambientes elegantes, funcionais e atemporais,
               unindo estética, conforto e identidade em cada projeto.
             </p>
 
-            <div className="mt-8 flex flex-col items-stretch gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="mt-5 flex flex-col items-stretch gap-5 sm:flex-row sm:flex-wrap sm:items-center">
 
               <a
                 href="https://wa.me/5511960759135"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 shrink-0 items-center justify-center gap-3 rounded-sm border border-[#6f552d] bg-[#6f552d] px-4 py-3 text-[11px] uppercase tracking-[0.12em] text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d] sm:px-5 sm:text-xs sm:tracking-[0.14em] md:text-sm"
+                className="inline-flex min-h-12 shrink-0 items-center justify-center gap-5 rounded-sm border border-[#6f552d] bg-[#6f552d] px-5 py-5 text-[11px] uppercase tracking-[0.12em] text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d] sm:text-xs sm:tracking-[0.14em] md:text-sm"
               >
                 Solicite um orçamento
                 <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" fill="currentColor" aria-hidden="true">
@@ -125,7 +125,7 @@ export default function Home() {
                 </svg>
               </a>
 
-              <a href="#projetos" className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-sm border border-[#6f552d] px-5 py-3 text-xs uppercase tracking-[0.14em] transition hover:bg-[#6f552d] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d] md:text-sm">
+              <a href="#projetos" className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-sm border border-[#6f552d] px-5 py-5 text-xs uppercase tracking-[0.14em] transition hover:bg-[#6f552d] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d] md:text-sm">
                 Ver projetos
               </a>
 
@@ -157,23 +157,23 @@ export default function Home() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="scroll-mt-[72px] bg-white px-5 py-14 sm:px-6 sm:py-16 md:scroll-mt-20 md:px-12 md:py-24">
+      <section id="sobre" className="scroll-mt-[72px] bg-white px-5 py-5 md:scroll-mt-20">
 
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:gap-20">
+        <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2">
 
           <div>
 
-            <p className="uppercase tracking-[0.3em] text-sm text-[#8a7a61] mb-6">
+            <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#8a7a61]">
               Sobre nós
             </p>
 
-            <h3 className="mb-6 text-3xl font-light sm:mb-8 sm:text-4xl">
+            <h3 className="mb-5 text-3xl font-light sm:text-4xl">
               Arquitetura com personalidade e propósito.
             </h3>
 
           </div>
 
-          <div className="max-w-xl space-y-6">
+          <div className="max-w-xl space-y-5">
             <p className="text-lg leading-8 text-[#666]">
               Nosso escritório desenvolve <strong className="text-[#2C2C2C]">projetos arquitetônicos e de interiores</strong>,
               acompanhando cada etapa do processo, desde a ideia inicial com o sonho do cliente até a entrega
@@ -198,10 +198,10 @@ export default function Home() {
       </section>
 
       {/* SERVIÇOS */}
-      <section id="servicos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-14 sm:px-6 sm:py-16 md:scroll-mt-20 md:px-12 md:py-24">
+      <section id="servicos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-5 md:scroll-mt-20">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8 max-w-2xl sm:mb-10">
-            <p className="mb-4 uppercase tracking-[0.3em] text-sm text-[#8a7a61]">
+          <div className="mb-5 max-w-2xl">
+            <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#8a7a61]">
               Nossos serviços
             </p>
             <h3 className="text-4xl font-light sm:text-5xl">
@@ -212,7 +212,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-4xl gap-3">
+          <div className="mx-auto grid max-w-4xl gap-5">
             {[
               {
                 title: "Serviços de Projeto",
@@ -256,7 +256,7 @@ export default function Home() {
               },
             ].map((service) => (
               <details key={service.title} className="group overflow-hidden border border-[#d8cec1] bg-[#f0ebe4] transition-colors open:border-[#6f552d] open:bg-[#eee8df]">
-                <summary className="flex min-h-24 cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 transition-colors hover:bg-[#e9e1d7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#8a7a61] group-open:bg-[#2c241c] group-open:hover:bg-[#3d3428] sm:px-8 [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-5 py-5 transition-colors hover:bg-[#e9e1d7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#8a7a61] group-open:bg-[#2c241c] group-open:hover:bg-[#3d3428] [&::-webkit-details-marker]:hidden">
                   <span className="text-xl font-light leading-snug text-[#3d3428] transition-colors group-open:text-white sm:text-2xl">{service.title}</span>
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#cfc3b4] text-[#8a7a61] transition group-open:rotate-180 group-open:border-[#9a835e] group-open:text-[#d0bea0]">
                     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
@@ -264,9 +264,9 @@ export default function Home() {
                     </svg>
                   </span>
                 </summary>
-                <ul className="grid border-t border-[#d8cec1] px-6 py-2 sm:grid-cols-2 sm:gap-x-10 sm:px-8 sm:py-3">
+                <ul className="grid border-t border-[#d8cec1] px-5 py-2 sm:grid-cols-2 sm:gap-x-5 sm:py-3">
                   {service.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 border-b border-[#ddd6cf] py-3 text-sm leading-6 text-[#5f574e] last:border-b-0 sm:text-base">
+                    <li key={item} className="flex items-start gap-5 border-b border-[#ddd6cf] py-3 text-sm leading-6 text-[#5f574e] last:border-b-0 sm:text-base">
                       <span aria-hidden="true" className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b99a68]" />
                       <span>{item}</span>
                     </li>
@@ -279,10 +279,10 @@ export default function Home() {
       </section>
 
       {/* PROJETOS */}
-      <section id="projetos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-14 sm:px-6 sm:py-16 md:scroll-mt-20 md:px-12 md:py-24">
+      <section id="projetos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-5 md:scroll-mt-20">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8 sm:mb-10">
-            <p className="mb-4 uppercase tracking-[0.3em] text-sm text-[#8a7a61]">
+          <div className="mb-5">
+            <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#8a7a61]">
               Projetos
             </p>
             <h3 className="text-4xl font-light sm:text-5xl">
@@ -294,12 +294,12 @@ export default function Home() {
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="scroll-mt-[72px] bg-[#3d3428] px-5 py-14 text-white sm:px-6 sm:py-16 md:scroll-mt-20 md:px-12 md:py-24">
+      <section id="contato" className="scroll-mt-[72px] bg-[#3d3428] px-5 py-5 text-white md:scroll-mt-20">
 
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-5 md:grid-cols-2">
           <div>
 
-            <p className="uppercase tracking-[0.3em] text-sm text-[#d0bea0] mb-6">
+            <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#d0bea0]">
               Contato
             </p>
 
@@ -307,15 +307,15 @@ export default function Home() {
               Vamos conversar sobre o seu projeto?
             </h3>
 
-            <p className="mt-8 max-w-xl text-lg leading-8 text-[#d7d2cb]">
+            <p className="mt-5 max-w-xl text-lg leading-8 text-[#d7d2cb]">
               Atendemos pessoas físicas e jurídicas em projetos de arquitetura
               e interiores. Conte-nos o que você precisa e escolha como prefere
               falar com a equipe da Vulpes Domus.
             </p>
           </div>
 
-          <div className="grid gap-4">
-            <div className="group flex min-h-[80px] items-center gap-6 rounded-sm border border-[#6d6254] px-5 py-3 text-left transition hover:border-[#c2a46f] sm:px-6">
+          <div className="grid gap-5">
+            <div className="group flex min-h-[80px] items-center gap-5 rounded-sm border border-[#6d6254] px-5 py-3 text-left transition hover:border-[#c2a46f]">
               <span aria-hidden="true" className="text-[#c2a46f] transition-transform group-hover:-translate-y-0.5">
                 <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <rect x="3" y="5" width="18" height="14" rx="1.5" />
@@ -337,7 +337,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Conversar com a Vulpes Domus pelo WhatsApp"
-              className="group flex min-h-[80px] items-center gap-6 rounded-sm border border-[#6d6254] px-5 py-3 text-left transition hover:border-[#c2a46f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f] sm:px-6"
+              className="group flex min-h-[80px] items-center gap-5 rounded-sm border border-[#6d6254] px-5 py-3 text-left transition hover:border-[#c2a46f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f]"
             >
               <span aria-hidden="true" className="text-[#c2a46f] transition-transform group-hover:-translate-y-0.5">
                 <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0" fill="currentColor">
@@ -352,7 +352,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Conhecer a Vulpes Domus no Instagram"
-              className="group flex min-h-[80px] items-center gap-6 rounded-sm border border-[#6d6254] px-5 py-3 text-left transition hover:border-[#c2a46f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f] sm:px-6"
+              className="group flex min-h-[80px] items-center gap-5 rounded-sm border border-[#6d6254] px-5 py-3 text-left transition hover:border-[#c2a46f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f]"
             >
               <span aria-hidden="true" className="text-[#c2a46f] transition-transform group-hover:-translate-y-0.5">
                 <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -369,7 +369,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#2c241c] px-5 py-10 text-center text-xs tracking-[0.12em] text-[#a59a8b] sm:px-6 sm:text-sm sm:tracking-[0.2em]">
+      <footer className="bg-[#2c241c] px-5 py-5 text-center text-xs tracking-[0.12em] text-[#a59a8b] sm:text-sm sm:tracking-[0.2em]">
         <div className="flex flex-col items-center gap-5">
           <p>VULPES DOMUS © 2026 — Todos os direitos reservados</p>
           <div className="flex items-center gap-5">
@@ -408,13 +408,13 @@ export default function Home() {
               </svg>
             </a>
           </div>
-          <div className="flex items-center gap-3 text-xs tracking-normal">
+          <div className="flex items-center gap-5 text-xs tracking-normal">
             <a
               href="https://github.com/aqs-group"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Perfil da AqS Group no GitHub"
-              className="flex items-center gap-2 rounded-sm text-[#81796d] transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f]"
+              className="flex items-center gap-5 rounded-sm text-[#81796d] transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f]"
             >
               <Image
                 src={publicAssetPath("/aqs-group-logo.png")}
