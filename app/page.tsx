@@ -212,7 +212,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="mx-auto grid max-w-4xl gap-3">
             {[
               {
                 title: "Serviços de Projeto",
@@ -255,18 +255,21 @@ export default function Home() {
                 ],
               },
             ].map((service) => (
-              <details key={service.title} className="group border border-[#ddd6cf] bg-white open:border-[#c2a46f]">
-                <summary className="flex min-h-28 cursor-pointer list-none items-center justify-between gap-5 p-6 sm:p-8 [&::-webkit-details-marker]:hidden">
-                  <span className="flex items-start gap-5">
-                    <span className="text-xl font-light leading-snug text-[#3d3428] sm:text-2xl">{service.title}</span>
+              <details key={service.title} className="group overflow-hidden border border-[#d8cec1] bg-[#f0ebe4] transition-colors open:border-[#6f552d] open:bg-[#eee8df]">
+                <summary className="flex min-h-24 cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 transition-colors hover:bg-[#e9e1d7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#8a7a61] group-open:bg-[#2c241c] group-open:hover:bg-[#3d3428] sm:px-8 [&::-webkit-details-marker]:hidden">
+                  <span className="text-xl font-light leading-snug text-[#3d3428] transition-colors group-open:text-white sm:text-2xl">{service.title}</span>
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#cfc3b4] text-[#8a7a61] transition group-open:rotate-180 group-open:border-[#9a835e] group-open:text-[#d0bea0]">
+                    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+                      <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </span>
-                  <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0 text-[#8a7a61] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
                 </summary>
-                <ul className="space-y-3 border-t border-[#eee9e3] px-6 py-5 pl-[4.5rem] sm:px-8 sm:pl-[5.5rem]">
+                <ul className="grid border-t border-[#d8cec1] px-6 py-2 sm:grid-cols-2 sm:gap-x-10 sm:px-8 sm:py-3">
                   {service.items.map((item) => (
-                    <li key={item} className="list-disc text-sm leading-6 text-[#6e675f] marker:text-[#c2a46f] sm:text-base">{item}</li>
+                    <li key={item} className="flex items-start gap-3 border-b border-[#ddd6cf] py-3 text-sm leading-6 text-[#5f574e] last:border-b-0 sm:text-base">
+                      <span aria-hidden="true" className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b99a68]" />
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
               </details>
