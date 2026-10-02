@@ -44,6 +44,7 @@ export default function Home() {
               <a href="#inicio">Início</a>
               <a href="#projetos">Projetos</a>
               <a href="#sobre">Sobre</a>
+              <a href="#servicos">Nossos serviços</a>
               <a href="#contato">Contato</a>
             </nav>
 
@@ -194,6 +195,37 @@ export default function Home() {
 
         </div>
 
+      </section>
+
+      {/* SERVIÇOS */}
+      <section id="servicos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-16 sm:px-6 sm:py-20 md:scroll-mt-20 md:px-12 md:py-28">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 max-w-2xl sm:mb-14">
+            <p className="mb-4 uppercase tracking-[0.3em] text-sm text-[#8a7a61]">
+              Nossos serviços
+            </p>
+            <h3 className="text-4xl font-light sm:text-5xl">
+              Soluções para cada etapa do seu projeto.
+            </h3>
+            <p className="mt-5 text-base leading-7 text-[#6e675f] sm:text-lg sm:leading-8">
+              Conheça as áreas em que a Vulpes Domus pode acompanhar você, da concepção à avaliação do imóvel.
+            </p>
+          </div>
+
+          <ol className="grid gap-4 sm:grid-cols-2">
+            {[
+              "Projetos arquitetônicos",
+              "Projetos de interiores",
+              "Regularização de imóveis",
+              "Vistoria de imóveis",
+            ].map((service, index) => (
+              <li key={service} className="flex min-h-28 items-start gap-5 border border-[#ddd6cf] bg-white p-6 sm:p-8">
+                <span className="pt-1 text-sm tracking-[0.2em] text-[#8a7a61]">0{index + 1}</span>
+                <h4 className="text-xl font-light leading-snug text-[#3d3428] sm:text-2xl">{service}</h4>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
 
       {/* PROJETOS */}
