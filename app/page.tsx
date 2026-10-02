@@ -199,7 +199,7 @@ export default function Home() {
 
       {/* SERVIÇOS */}
       <section id="servicos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-16 sm:px-6 sm:py-20 md:scroll-mt-20 md:px-12 md:py-28">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-2xl sm:mb-14">
             <p className="mb-4 uppercase tracking-[0.3em] text-sm text-[#8a7a61]">
               Nossos serviços
