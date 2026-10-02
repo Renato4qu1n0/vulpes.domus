@@ -279,7 +279,7 @@ export default function Home() {
       </section>
 
       {/* PROJETOS */}
-      <section id="projetos" className="scroll-mt-[72px] bg-[#f8f5f1] px-5 py-10 md:scroll-mt-20">
+      <section id="projetos" className="scroll-mt-[72px] bg-white px-5 py-10 md:scroll-mt-20">
         <div className="mx-auto max-w-6xl">
           <div className="mb-5">
             <p className="mb-5 text-sm uppercase tracking-[0.3em] text-[#8a7a61]">
