@@ -254,13 +254,10 @@ export default function Home() {
                   "Pré-Análise COMAR",
                 ],
               },
-              { title: "Regularização de imóveis", items: ["Regularização de imóveis"] },
-              { title: "Vistoria de imóveis", items: ["Vistoria de imóveis"] },
-            ].map((service, index) => (
+            ].map((service) => (
               <details key={service.title} className="group border border-[#ddd6cf] bg-white open:border-[#c2a46f]">
                 <summary className="flex min-h-28 cursor-pointer list-none items-center justify-between gap-5 p-6 sm:p-8 [&::-webkit-details-marker]:hidden">
                   <span className="flex items-start gap-5">
-                    <span className="pt-1 text-sm tracking-[0.2em] text-[#8a7a61]">0{index + 1}</span>
                     <span className="text-xl font-light leading-snug text-[#3d3428] sm:text-2xl">{service.title}</span>
                   </span>
                   <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0 text-[#8a7a61] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
