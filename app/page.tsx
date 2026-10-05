@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Rouge_Script } from "next/font/google";
 import ProjectCarousel from "./ProjectCarousel";
 import CopyEmailButton from "./CopyEmailButton";
+import MobileNavigation from "./MobileNavigation";
 import { publicAssetPath } from "./publicAssetPath";
 
 const rouge = Rouge_Script({
@@ -9,30 +10,50 @@ const rouge = Rouge_Script({
   weight: "400",
 });
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Vulpes Domus",
+  url: "https://renato4qu1n0.github.io/vulpes.domus/",
+  image: "https://renato4qu1n0.github.io/vulpes.domus/logo.webp",
+  description:
+    "Escritório de arquitetura e interiores com atendimento em São Paulo e região.",
+  telephone: "+55 11 96075-9135",
+  email: "vulpesdomusarquitetura@protonmail.com",
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "São Paulo e região",
+  },
+};
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-clip bg-[#f5f2ef] pt-[72px] text-[#3d3428] md:pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
 
       {/* HEADER */}
       <header className="fixed left-0 top-0 z-50 h-[72px] w-full border-b border-[#ddd6cf] bg-[#f5f2ef]/95 backdrop-blur-md md:h-20">
 
-        <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-5 sm:gap-5">
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-2 px-3 sm:gap-5 sm:px-6 md:px-12">
 
           <div className="flex min-w-0 items-center gap-2 sm:gap-5">
 
             <Image
-              src={publicAssetPath("/logo-cabecalho.png")}
+              src={publicAssetPath("/logo-cabecalho.webp")}
               width={75}
               height={75}
-              alt="Logo"
-              className="h-11 w-11 shrink-0 object-contain sm:h-14 sm:w-14 md:h-[75px] md:w-[75px]"
+              alt="Vulpes Domus"
+              className="h-10 w-10 shrink-0 object-contain sm:h-14 sm:w-14 md:h-[75px] md:w-[75px]"
             />
 
             <div>
-              <h1 className={`${rouge.className} whitespace-nowrap text-3xl leading-none text-[#6f552d] sm:text-4xl md:text-5xl`}>
+              <h1 className={`${rouge.className} whitespace-nowrap text-2xl leading-none text-[#6f552d] sm:text-4xl md:text-5xl`}>
                 Vulpes Domus</h1>
 
-              <p className="whitespace-nowrap text-[9px] tracking-[0.12em] text-[#8a7a61] uppercase sm:text-[10px] sm:tracking-[0.2em] md:text-xs">
+              <p className="hidden whitespace-nowrap text-[9px] tracking-[0.12em] text-[#8a7a61] uppercase sm:block sm:text-[10px] sm:tracking-[0.2em] md:text-xs">
                 Arquitetura & Interiores
               </p>
             </div>
@@ -40,21 +61,21 @@ export default function Home() {
           </div>
 
           <div className="flex shrink-0 items-center gap-3 sm:gap-5">
-            <nav className="hidden gap-5 uppercase text-sm tracking-[0.2em] md:flex">
+            <nav className="hidden gap-3 uppercase text-xs tracking-[0.12em] lg:flex xl:gap-5 xl:text-sm xl:tracking-[0.2em]">
               <a href="#inicio">Início</a>
-              <a href="#projetos">Projetos</a>
               <a href="#sobre">Sobre</a>
               <a href="#servicos">Nossos serviços</a>
+              <a href="#projetos">Projetos</a>
               <a href="#contato">Contato</a>
             </nav>
 
-            <div className="flex items-center gap-3 border-l border-[#ddd6cf] pl-3 sm:gap-5 sm:pl-5">
+            <div className="flex items-center gap-0 sm:gap-3 sm:border-l sm:border-[#ddd6cf] sm:pl-3 xl:gap-4 xl:pl-5">
               <a
                 href="https://www.instagram.com/vulpes.domus/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram da Vulpes Domus"
-                className="text-[#6f552d] transition hover:opacity-70"
+                className="grid h-11 w-11 place-items-center rounded-sm text-[#6f552d] transition hover:bg-[#e8e2db] hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6f552d]"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
@@ -67,7 +88,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp da Vulpes Domus"
-                className="text-[#6f552d] transition hover:opacity-70"
+                className="grid h-11 w-11 place-items-center rounded-sm text-[#6f552d] transition hover:bg-[#e8e2db] hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6f552d]"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
                   <path d="M12.04 2a9.87 9.87 0 0 0-8.49 14.9L2 22l5.24-1.37A9.94 9.94 0 1 0 12.04 2Zm0 18.08a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.1.81.83-3.02-.2-.31a8.12 8.12 0 1 1 6.9 3.83Zm4.46-6.08c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" />
@@ -76,13 +97,14 @@ export default function Home() {
               <a
                 href="mailto:vulpesdomusarquitetura@protonmail.com"
                 aria-label="Enviar e-mail para a Vulpes Domus"
-                className="text-[#6f552d] transition hover:opacity-70"
+                className="grid h-11 w-11 place-items-center rounded-sm text-[#6f552d] transition hover:bg-[#e8e2db] hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6f552d]"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
                   <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />
                   <path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
+            <MobileNavigation />
             </div>
           </div>
 
@@ -141,10 +163,10 @@ export default function Home() {
             <div className="relative flex h-[300px] items-center justify-center overflow-hidden rounded-[28px] bg-[#e8e2db] shadow-2xl sm:h-[400px] sm:rounded-[36px] md:h-[500px] md:rounded-[40px]">
 
               <Image
-                src={publicAssetPath("/logo.png")}
+              src={publicAssetPath("/logo.webp")}
                 width={800}
                 height={800}
-                alt="Logo"
+                alt="Vulpes Domus"
                 className="h-auto w-[min(82%,420px)] object-contain"
               />
 
@@ -308,7 +330,7 @@ export default function Home() {
             </h3>
 
             <p className="mt-5 max-w-xl text-lg leading-8 text-[#d7d2cb]">
-              Atendemos pessoas físicas e jurídicas em projetos de arquitetura
+              Atendemos pessoas físicas e jurídicas em São Paulo e região, em projetos de arquitetura
               e interiores. Conte-nos o que você precisa e escolha como prefere
               falar com a equipe da Vulpes Domus.
             </p>
@@ -378,7 +400,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram da Vulpes Domus"
-              className="transition hover:text-white"
+              className="grid h-11 w-11 place-items-center rounded-sm transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2a46f]"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
@@ -391,7 +413,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp da Vulpes Domus"
-              className="transition hover:text-white"
+              className="grid h-11 w-11 place-items-center rounded-sm transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2a46f]"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
                 <path d="M12.04 2a9.87 9.87 0 0 0-8.49 14.9L2 22l5.24-1.37A9.94 9.94 0 1 0 12.04 2Zm0 18.08a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.1.81.83-3.02-.2-.31a8.12 8.12 0 1 1 6.9 3.83Zm4.46-6.08c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" />
@@ -400,7 +422,7 @@ export default function Home() {
             <a
               href="mailto:vulpesdomusarquitetura@protonmail.com"
               aria-label="Enviar e-mail para a Vulpes Domus"
-              className="transition hover:text-white"
+              className="grid h-11 w-11 place-items-center rounded-sm transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2a46f]"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
                 <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />

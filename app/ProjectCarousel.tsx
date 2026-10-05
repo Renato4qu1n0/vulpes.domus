@@ -6,27 +6,27 @@ import { publicAssetPath } from "./publicAssetPath";
 
 const projectImages = [
   {
-    src: publicAssetPath("/images/CENA 11 FINAL.effectsResult (1).png"),
+    src: publicAssetPath("/images/cena-11.webp"),
     alt: "Vista externa principal do Complexo Educacional",
   },
   {
-    src: publicAssetPath("/images/CENA 12 FINAL.effectsResult.png"),
+    src: publicAssetPath("/images/cena-12.webp"),
     alt: "Área externa de convivência do Complexo Educacional",
   },
   {
-    src: publicAssetPath("/images/BIBLIOTECA (1).png"),
+    src: publicAssetPath("/images/biblioteca.webp"),
     alt: "Biblioteca com estantes e espaços de leitura",
   },
   {
-    src: publicAssetPath("/images/2.effectsResult.png"),
+    src: publicAssetPath("/images/espaco-colaborativo.webp"),
     alt: "Espaço colaborativo com mesa orgânica e jardim vertical",
   },
   {
-    src: publicAssetPath("/images/BRINQUEDOTECA.png"),
+    src: publicAssetPath("/images/brinquedoteca.webp"),
     alt: "Brinquedoteca com tenda e área de brincadeiras",
   },
   {
-    src: publicAssetPath("/images/SALA DE AULA.png"),
+    src: publicAssetPath("/images/sala-de-aula.webp"),
     alt: "Sala de aula com mesas de madeira",
   },
 ];
@@ -80,7 +80,6 @@ export default function ProjectCarousel() {
                 alt={image.alt}
                 className="object-cover transition-opacity duration-500"
                 fill
-                priority={firstImage === 0 && slotIndex === 0}
                 sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1279px) 30vw, 400px"
                 src={image.src}
               />

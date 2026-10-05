@@ -13,9 +13,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://renato4qu1n0.github.io/vulpes.domus/"),
   title: "Vulpes Domus | Arquitetura & Interiores",
   description:
-    "Projetos de arquitetura e interiores sofisticados, funcionais e alinhados à identidade de cada cliente.",
+    "Projetos de arquitetura e interiores sofisticados em São Paulo e região, com soluções funcionais e alinhadas à identidade de cada cliente.",
+  openGraph: {
+    title: "Vulpes Domus | Arquitetura & Interiores",
+    description:
+      "Projetos de arquitetura e interiores sofisticados em São Paulo e região, com soluções funcionais e alinhadas à identidade de cada cliente.",
+    url: "https://renato4qu1n0.github.io/vulpes.domus/",
+    siteName: "Vulpes Domus",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "logo.webp",
+        width: 840,
+        height: 560,
+        alt: "Vulpes Domus — Arquitetura & Interiores",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vulpes Domus | Arquitetura & Interiores",
+    description:
+      "Projetos de arquitetura e interiores sofisticados em São Paulo e região.",
+    images: ["logo.webp"],
+  },
 };
 
 export default function RootLayout({
