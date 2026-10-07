@@ -17,7 +17,7 @@ const localBusinessJsonLd = {
   url: "https://renato4qu1n0.github.io/vulpes.domus/",
   image: "https://renato4qu1n0.github.io/vulpes.domus/logo.webp",
   description:
-    "Escritório de arquitetura e interiores com atendimento em São Paulo e região.",
+    "Escritório de arquitetura e legalização com atendimento em São Paulo e região.",
   telephone: "+55 11 96075-9135",
   email: "vulpesdomusarquitetura@protonmail.com",
   areaServed: {
@@ -54,7 +54,7 @@ export default function Home() {
                 Vulpes Domus</h1>
 
               <p className="hidden whitespace-nowrap text-[9px] tracking-[0.12em] text-[#8a7a61] uppercase sm:block sm:text-[10px] sm:tracking-[0.2em] md:text-xs">
-                Arquitetura & Interiores
+                Arquitetura & Legalização
               </p>
             </div>
 
