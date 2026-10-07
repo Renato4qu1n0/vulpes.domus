@@ -244,6 +244,7 @@ export default function Home() {
                   "Consultoria de Interiores + Levantamento",
                   "Projeto de Interiores + Levantamento",
                   "Projeto de Marcenaria + Levantamento",
+                  "Projeto Luminotécnico + Levantamento",
                 ],
               },
               {
