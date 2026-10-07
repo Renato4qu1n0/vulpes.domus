@@ -1,10 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { publicAssetPath } from "./publicAssetPath";
 
 const projectImages = [
+  {
+    src: publicAssetPath("/images/banheiro-bancada.webp"),
+    alt: "Bancada de banheiro em madeira com cuba e metais dourados",
+  },
+  {
+    src: publicAssetPath("/images/banheiro-lavabo.webp"),
+    alt: "Lavabo com parede ilustrada, bancada de madeira e detalhes verdes",
+  },
+  {
+    src: publicAssetPath("/images/sala-estar-integrada.webp"),
+    alt: "Sala de estar integrada à sala de jantar em tons neutros",
+  },
+  {
+    src: publicAssetPath("/images/sala-de-jantar.webp"),
+    alt: "Sala de jantar com mesa de madeira, cadeiras claras e painel ripado",
+  },
+  {
+    src: publicAssetPath("/images/cozinha.webp"),
+    alt: "Cozinha compacta com bancada de pedra e janela ampla",
+  },
   {
     src: publicAssetPath("/images/cena-11.webp"),
     alt: "Vista externa principal do Complexo Educacional",
@@ -34,9 +54,27 @@ const projectImages = [
 export default function ProjectCarousel() {
   const [firstImage, setFirstImage] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [hasFocus, setHasFocus] = useState(false);
   const visibleImages = [0, 1, 2].map(
     (offset) => (firstImage + offset) % projectImages.length,
   );
+  const isPaused = isHovered || hasFocus;
+
+  useEffect(() => {
+    if (
+      isPaused ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const interval = window.setInterval(() => {
+      setFirstImage((current) => (current + 1) % projectImages.length);
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, [isPaused]);
 
   function move(direction: number) {
     setFirstImage((current) =>
@@ -49,7 +87,16 @@ export default function ProjectCarousel() {
       aria-label="Carrossel de imagens dos projetos"
       aria-roledescription="carrossel"
       className="w-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d]"
+      role="region"
       tabIndex={0}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setHasFocus(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setHasFocus(false);
+        }
+      }}
       onKeyDown={(event) => {
         if (event.key === "ArrowLeft") {
           event.preventDefault();
