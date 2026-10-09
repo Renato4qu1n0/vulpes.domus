@@ -2,11 +2,11 @@
 
 ## Code
 - [ ] Revisar o diff final e confirmar que nenhum secret ou dado de teste foi adicionado.
-- [ ] Executar `npm ci`, `npm run lint` e `npm run build` com `NEXT_PUBLIC_BASE_PATH=/vulpes.domus`.
+- [ ] Executar `npm ci`, `npm run lint` e `npm run build` com `NEXT_PUBLIC_BASE_PATH` vazio para publicar na raiz do domínio personalizado.
 - [ ] Registrar a aceitação temporária dos cinco avisos HIGH de lint em `SEC-002`; confirmar `npm audit --omit=dev` sem findings.
 
 ## Environment Variables
-- [ ] Confirmar `NEXT_PUBLIC_BASE_PATH=/vulpes.domus` no build do GitHub Pages; não inserir secrets no bundle.
+- [ ] Confirmar que o build usa caminho raiz e publica em `https://vulpesdomus.com.br/`; não inserir secrets no bundle.
 
 ## Authentication
 - [ ] N/A: o site não tem login, contas ou sessão.

@@ -1,12 +1,32 @@
 "use client";
 
 import { useState } from "react";
+import AnalyticsLink from "./AnalyticsLink";
 
-const navigationLinks = [
+type NavigationLink =
+  | { href: string; label: string }
+  | {
+      href: string;
+      label: string;
+      analyticsEvent: "view_projetos" | "view_servicos";
+      analyticsParams: { button_location: "mobile_navigation" };
+    };
+
+const navigationLinks: NavigationLink[] = [
   { href: "#inicio", label: "Início" },
   { href: "#sobre", label: "Sobre" },
-  { href: "#servicos", label: "Nossos serviços" },
-  { href: "#projetos", label: "Projetos" },
+  {
+    href: "#servicos",
+    label: "Nossos serviços",
+    analyticsEvent: "view_servicos",
+    analyticsParams: { button_location: "mobile_navigation" },
+  },
+  {
+    href: "#projetos",
+    label: "Projetos",
+    analyticsEvent: "view_projetos",
+    analyticsParams: { button_location: "mobile_navigation" },
+  },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -38,16 +58,37 @@ export default function MobileNavigation() {
           aria-label="Navegação principal"
           className="absolute right-0 top-full mt-3 grid w-[min(19rem,calc(100vw-2rem))] gap-1 rounded-sm border border-[#ddd6cf] bg-[#f5f2ef] p-2 shadow-xl"
         >
-          {navigationLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="flex min-h-11 items-center px-4 text-sm uppercase tracking-[0.16em] text-[#3d3428] transition hover:bg-[#e8e2db] focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#6f552d]"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navigationLinks.map((link) => {
+            const className =
+              "flex min-h-11 items-center px-4 text-sm uppercase tracking-[0.16em] text-[#3d3428] transition hover:bg-[#e8e2db] focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#6f552d]";
+            const onClick = () => setIsOpen(false);
+
+            if ("analyticsEvent" in link) {
+              return (
+                <AnalyticsLink
+                  key={link.href}
+                  href={link.href}
+                  analyticsEvent={link.analyticsEvent}
+                  analyticsParams={link.analyticsParams}
+                  onClick={onClick}
+                  className={className}
+                >
+                  {link.label}
+                </AnalyticsLink>
+              );
+            }
+
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={onClick}
+                className={className}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
       )}
     </div>

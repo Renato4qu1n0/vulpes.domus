@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import AnalyticsProvider from "./lib/analytics/AnalyticsProvider";
+import CookieConsent from "./CookieConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://renato4qu1n0.github.io/vulpes.domus/"),
+  metadataBase: new URL("https://vulpesdomus.com.br/"),
+  alternates: {
+    canonical: "https://vulpesdomus.com.br/",
+  },
   title: "Vulpes Domus | Arquitetura & Interiores",
   description:
     "Projetos de arquitetura e interiores sofisticados em São Paulo e região, com soluções funcionais e alinhadas à identidade de cada cliente.",
@@ -21,7 +26,7 @@ export const metadata: Metadata = {
     title: "Vulpes Domus | Arquitetura & Interiores",
     description:
       "Projetos de arquitetura e interiores sofisticados em São Paulo e região, com soluções funcionais e alinhadas à identidade de cada cliente.",
-    url: "https://renato4qu1n0.github.io/vulpes.domus/",
+    url: "https://vulpesdomus.com.br/",
     siteName: "Vulpes Domus",
     locale: "pt_BR",
     type: "website",
@@ -53,7 +58,12 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <AnalyticsProvider>
+          {children}
+          <CookieConsent />
+        </AnalyticsProvider>
+      </body>
     </html>
   );
 }

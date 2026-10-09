@@ -3,6 +3,9 @@ import { Rouge_Script } from "next/font/google";
 import ProjectCarousel from "./ProjectCarousel";
 import CopyEmailButton from "./CopyEmailButton";
 import MobileNavigation from "./MobileNavigation";
+import AnalyticsLink from "./AnalyticsLink";
+import TrackedServiceDetails from "./TrackedServiceDetails";
+import PrivacyPreferencesButton from "./PrivacyPreferencesButton";
 import { publicAssetPath } from "./publicAssetPath";
 
 const rouge = Rouge_Script({
@@ -14,8 +17,8 @@ const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Vulpes Domus",
-  url: "https://renato4qu1n0.github.io/vulpes.domus/",
-  image: "https://renato4qu1n0.github.io/vulpes.domus/logo.webp",
+  url: "https://vulpesdomus.com.br/",
+  image: "https://vulpesdomus.com.br/logo.webp",
   description:
     "Escritório de arquitetura e legalização com atendimento em São Paulo e região.",
   telephone: "+55 11 96075-9135",
@@ -31,7 +34,9 @@ export default function Home() {
     <main className="min-h-screen overflow-x-clip bg-[#f5f2ef] pt-[72px] text-[#3d3428] md:pt-20">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessJsonLd).replace(/</g, "\\u003c"),
+        }}
       />
 
       {/* HEADER */}
@@ -64,17 +69,19 @@ export default function Home() {
             <nav className="hidden gap-3 uppercase text-xs tracking-[0.12em] lg:flex xl:gap-5 xl:text-sm xl:tracking-[0.2em]">
               <a href="#inicio">Início</a>
               <a href="#sobre">Sobre</a>
-              <a href="#servicos">Nossos serviços</a>
-              <a href="#projetos">Projetos</a>
+              <AnalyticsLink href="#servicos" analyticsEvent="view_servicos" analyticsParams={{ button_location: "header_navigation" }}>Nossos serviços</AnalyticsLink>
+              <AnalyticsLink href="#projetos" analyticsEvent="view_projetos" analyticsParams={{ button_location: "header_navigation" }}>Projetos</AnalyticsLink>
               <a href="#contato">Contato</a>
             </nav>
 
             <div className="flex items-center gap-0 sm:gap-3 sm:border-l sm:border-[#ddd6cf] sm:pl-3 xl:gap-4 xl:pl-5">
-              <a
+              <AnalyticsLink
                 href="https://www.instagram.com/vulpes.domus/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram da Vulpes Domus"
+                analyticsEvent="click_instagram"
+                analyticsParams={{ contact_method: "instagram", button_location: "header" }}
                 className="grid h-11 w-11 place-items-center rounded-sm text-[#6f552d] transition hover:bg-[#e8e2db] hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6f552d]"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
@@ -82,28 +89,32 @@ export default function Home() {
                   <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
                   <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
                 </svg>
-              </a>
-              <a
+              </AnalyticsLink>
+              <AnalyticsLink
                 href="https://wa.me/5511960759135"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp da Vulpes Domus"
+                analyticsEvent="click_whatsapp"
+                analyticsParams={{ contact_method: "whatsapp", button_location: "header" }}
                 className="grid h-11 w-11 place-items-center rounded-sm text-[#6f552d] transition hover:bg-[#e8e2db] hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6f552d]"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
                   <path d="M12.04 2a9.87 9.87 0 0 0-8.49 14.9L2 22l5.24-1.37A9.94 9.94 0 1 0 12.04 2Zm0 18.08a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.1.81.83-3.02-.2-.31a8.12 8.12 0 1 1 6.9 3.83Zm4.46-6.08c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" />
                 </svg>
-              </a>
-              <a
+              </AnalyticsLink>
+              <AnalyticsLink
                 href="mailto:vulpesdomusarquitetura@protonmail.com"
                 aria-label="Enviar e-mail para a Vulpes Domus"
+                analyticsEvent="click_email"
+                analyticsParams={{ contact_method: "email", button_location: "header" }}
                 className="grid h-11 w-11 place-items-center rounded-sm text-[#6f552d] transition hover:bg-[#e8e2db] hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6f552d]"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
                   <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />
                   <path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
+              </AnalyticsLink>
             <MobileNavigation />
             </div>
           </div>
@@ -135,21 +146,23 @@ export default function Home() {
 
             <div className="mt-5 flex flex-col items-stretch gap-5 sm:flex-row sm:flex-wrap sm:items-center">
 
-              <a
+              <AnalyticsLink
                 href="https://wa.me/5511960759135"
                 target="_blank"
                 rel="noopener noreferrer"
+                analyticsEvent="click_orcamento"
+                analyticsParams={{ contact_method: "whatsapp", button_location: "hero" }}
                 className="inline-flex min-h-12 shrink-0 items-center justify-center gap-5 rounded-sm border border-[#6f552d] bg-[#6f552d] px-5 py-5 text-[11px] uppercase tracking-[0.12em] text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d] sm:text-xs sm:tracking-[0.14em] md:text-sm"
               >
                 Solicite um orçamento
                 <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" fill="currentColor" aria-hidden="true">
                   <path d="M12.04 2a9.87 9.87 0 0 0-8.49 14.9L2 22l5.24-1.37A9.94 9.94 0 1 0 12.04 2Zm0 18.08a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.1.81.83-3.02-.2-.31a8.12 8.12 0 1 1 6.9 3.83Zm4.46-6.08c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" />
                 </svg>
-              </a>
+              </AnalyticsLink>
 
-              <a href="#projetos" className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-sm border border-[#6f552d] px-5 py-5 text-xs uppercase tracking-[0.14em] transition hover:bg-[#6f552d] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d] md:text-sm">
+              <AnalyticsLink href="#projetos" analyticsEvent="view_projetos" analyticsParams={{ button_location: "hero" }} className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-sm border border-[#6f552d] px-5 py-5 text-xs uppercase tracking-[0.14em] transition hover:bg-[#6f552d] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d] md:text-sm">
                 Ver projetos
-              </a>
+              </AnalyticsLink>
 
             </div>
 
@@ -238,6 +251,7 @@ export default function Home() {
             {[
               {
                 title: "Serviços de Projeto",
+                category: "projetos" as const,
                 items: [
                   "Execução Interiores",
                   "Consultoria Arquitetônica + Levantamento",
@@ -249,6 +263,7 @@ export default function Home() {
               },
               {
                 title: "Legalização",
+                category: "legalizacao" as const,
                 items: [
                   "Regularização de Imóvel Residencial",
                   "Regularização de Imóvel Comercial",
@@ -278,7 +293,7 @@ export default function Home() {
                 ],
               },
             ].map((service) => (
-              <details key={service.title} className="group overflow-hidden border border-[#d8cec1] bg-[#f0ebe4] transition-colors open:border-[#6f552d] open:bg-[#eee8df]">
+              <TrackedServiceDetails key={service.title} serviceCategory={service.category} className="group overflow-hidden border border-[#d8cec1] bg-[#f0ebe4] transition-colors open:border-[#6f552d] open:bg-[#eee8df]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-5 py-5 transition-colors hover:bg-[#e9e1d7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#8a7a61] group-open:bg-[#2c241c] group-open:hover:bg-[#3d3428] [&::-webkit-details-marker]:hidden">
                   <span className="text-xl font-light leading-snug text-[#3d3428] transition-colors group-open:text-white sm:text-2xl">{service.title}</span>
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#cfc3b4] text-[#8a7a61] transition group-open:rotate-180 group-open:border-[#9a835e] group-open:text-[#d0bea0]">
@@ -295,7 +310,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </details>
+              </TrackedServiceDetails>
             ))}
           </div>
         </div>
@@ -345,21 +360,25 @@ export default function Home() {
                   <path d="m4 7 8 6 8-6" />
                 </svg>
               </span>
-              <a
+              <AnalyticsLink
                 href="mailto:vulpesdomusarquitetura@protonmail.com"
                 aria-label="Enviar e-mail para Vulpes Domus"
+                analyticsEvent="click_email"
+                analyticsParams={{ contact_method: "email", button_location: "contact_section" }}
                 className="min-w-0 flex-1 break-all text-base leading-relaxed text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f] sm:break-normal sm:text-lg"
               >
                 vulpesdomusarquitetura@protonmail.com
-              </a>
+              </AnalyticsLink>
               <CopyEmailButton email="vulpesdomusarquitetura@protonmail.com" />
             </div>
 
-            <a
+            <AnalyticsLink
               href="https://wa.me/5511960759135"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Conversar com a Vulpes Domus pelo WhatsApp"
+              analyticsEvent="click_whatsapp"
+              analyticsParams={{ contact_method: "whatsapp", button_location: "contact_section" }}
               className="group flex min-h-[80px] items-center gap-5 rounded-sm border border-[#6d6254] px-5 py-3 text-left transition hover:border-[#c2a46f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f]"
             >
               <span aria-hidden="true" className="text-[#c2a46f] transition-transform group-hover:-translate-y-0.5">
@@ -368,13 +387,15 @@ export default function Home() {
                 </svg>
               </span>
               <span className="text-base leading-relaxed text-white sm:text-lg">Converse com o escritório</span>
-            </a>
+            </AnalyticsLink>
 
-            <a
+            <AnalyticsLink
               href="https://www.instagram.com/vulpes.domus/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Conhecer a Vulpes Domus no Instagram"
+              analyticsEvent="click_instagram"
+              analyticsParams={{ contact_method: "instagram", button_location: "contact_section" }}
               className="group flex min-h-[80px] items-center gap-5 rounded-sm border border-[#6d6254] px-5 py-3 text-left transition hover:border-[#c2a46f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f]"
             >
               <span aria-hidden="true" className="text-[#c2a46f] transition-transform group-hover:-translate-y-0.5">
@@ -385,7 +406,7 @@ export default function Home() {
                 </svg>
               </span>
               <span className="text-base leading-relaxed text-white sm:text-lg">Conheça nosso trabalho</span>
-            </a>
+            </AnalyticsLink>
           </div>
         </div>
 
@@ -396,11 +417,13 @@ export default function Home() {
         <div className="flex flex-col items-center gap-5">
           <p>VULPES DOMUS © 2026 — Todos os direitos reservados</p>
           <div className="flex items-center gap-5">
-            <a
+            <AnalyticsLink
               href="https://www.instagram.com/vulpes.domus/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram da Vulpes Domus"
+              analyticsEvent="click_instagram"
+              analyticsParams={{ contact_method: "instagram", button_location: "footer" }}
               className="grid h-11 w-11 place-items-center rounded-sm transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2a46f]"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
@@ -408,29 +431,34 @@ export default function Home() {
                 <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
                 <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
               </svg>
-            </a>
-            <a
+            </AnalyticsLink>
+            <AnalyticsLink
               href="https://wa.me/5511960759135"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp da Vulpes Domus"
+              analyticsEvent="click_whatsapp"
+              analyticsParams={{ contact_method: "whatsapp", button_location: "footer" }}
               className="grid h-11 w-11 place-items-center rounded-sm transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2a46f]"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
                 <path d="M12.04 2a9.87 9.87 0 0 0-8.49 14.9L2 22l5.24-1.37A9.94 9.94 0 1 0 12.04 2Zm0 18.08a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.1.81.83-3.02-.2-.31a8.12 8.12 0 1 1 6.9 3.83Zm4.46-6.08c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" />
               </svg>
-            </a>
-            <a
+            </AnalyticsLink>
+            <AnalyticsLink
               href="mailto:vulpesdomusarquitetura@protonmail.com"
               aria-label="Enviar e-mail para a Vulpes Domus"
+              analyticsEvent="click_email"
+              analyticsParams={{ contact_method: "email", button_location: "footer" }}
               className="grid h-11 w-11 place-items-center rounded-sm transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2a46f]"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
                 <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />
                 <path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </a>
+            </AnalyticsLink>
           </div>
+          <PrivacyPreferencesButton />
           <div className="flex items-center gap-5 text-xs tracking-normal">
             <a
               href="https://github.com/aqs-group"

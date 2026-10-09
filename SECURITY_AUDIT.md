@@ -3,6 +3,8 @@
 **Data:** 6 de outubro de 2026  
 **Escopo:** repositório e configuração local. Nenhum teste foi executado contra GitHub Pages ou outro serviço externo.
 
+> Atualização de 9 de outubro de 2026: a publicação atual usa o domínio personalizado `https://vulpesdomus.com.br/` e caminho raiz. As referências ao caminho de projeto `/vulpes.domus` abaixo registram a configuração e validação históricas da auditoria; não devem ser usadas no build atual.
+
 ## Executive Summary
 
 O projeto é um site institucional estático, sem backend ou dados de usuários. A auditoria não encontrou secrets nos arquivos atuais nem nos 26 commits alcançáveis do Git. A análise de dependências não encontrou vulnerabilidades na árvore de produção (`npm audit --omit=dev`); o `npm audit` completo ainda reporta cinco avisos altos, todos parte da cadeia de ferramentas de lint em `devDependencies`.

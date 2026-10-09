@@ -1,12 +1,13 @@
 {
   "name": "vulpesdomus-site",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:analytics": "node --test tests/analytics-security.test.mjs"
   },
   "dependencies": {
     "next": "16.3.8",
