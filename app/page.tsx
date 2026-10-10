@@ -21,7 +21,7 @@ const localBusinessJsonLd = {
   image: "https://vulpesdomus.com.br/logo.webp",
   description:
     "Escritório de arquitetura e legalização com atendimento em São Paulo e região.",
-  telephone: "+55 11 96075-9135",
+  telephone: "+55 11 93624-7726",
   email: "vulpesdomusarquitetura@protonmail.com",
   areaServed: {
     "@type": "AdministrativeArea",
@@ -91,7 +91,7 @@ export default function Home() {
                 </svg>
               </AnalyticsLink>
               <AnalyticsLink
-                href="https://wa.me/5511960759135"
+                href="https://wa.me/5511936247726"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp da Vulpes Domus"
@@ -147,7 +147,7 @@ export default function Home() {
             <div className="mt-5 flex flex-col items-stretch gap-5 sm:flex-row sm:flex-wrap sm:items-center">
 
               <AnalyticsLink
-                href="https://wa.me/5511960759135"
+                href="https://wa.me/5511936247726"
                 target="_blank"
                 rel="noopener noreferrer"
                 analyticsEvent="click_orcamento"
@@ -373,7 +373,7 @@ export default function Home() {
             </div>
 
             <AnalyticsLink
-              href="https://wa.me/5511960759135"
+              href="https://wa.me/5511936247726"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Conversar com a Vulpes Domus pelo WhatsApp"
@@ -433,7 +433,7 @@ export default function Home() {
               </svg>
             </AnalyticsLink>
             <AnalyticsLink
-              href="https://wa.me/5511960759135"
+              href="https://wa.me/5511936247726"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp da Vulpes Domus"
