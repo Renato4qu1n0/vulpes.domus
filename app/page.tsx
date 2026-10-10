@@ -458,23 +458,23 @@ export default function Home() {
               </svg>
             </AnalyticsLink>
           </div>
-          <PrivacyPreferencesButton />
-          <div className="flex items-center gap-5 text-xs tracking-normal">
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 sm:gap-x-4">
+            <PrivacyPreferencesButton />
             <a
               href="https://github.com/aqs-group"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Perfil da AqS Group no GitHub"
-              className="flex items-center gap-5 rounded-sm text-[#81796d] transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f]"
+              className="flex min-h-11 items-center gap-2 rounded-sm text-xs tracking-normal text-[#81796d] transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f] sm:border-l sm:border-[#6d6254] sm:pl-4"
             >
               <Image
                 src={publicAssetPath("/aqs-group-logo.png")}
-                width={30}
-                height={30}
+                width={26}
+                height={26}
                 alt="AqS Group"
                 className="rounded-sm"
               />
-              <span className="tracking-[0.04em]">Powered by AqS Group</span>
+              <span className="whitespace-nowrap tracking-[0.02em]">Powered by AqS Group</span>
             </a>
           </div>
         </div>
