@@ -7,7 +7,7 @@ export default function PrivacyPreferencesButton() {
 
   return (
     <button
-      className="min-h-11 whitespace-nowrap rounded-sm px-2 text-[11px] tracking-normal text-[#d0bea0] underline decoration-[#8a7a61] underline-offset-4 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2a46f]"
+      className="min-h-11 whitespace-nowrap rounded-sm px-1 text-[11px] tracking-normal text-[#d0bea0] underline decoration-[#8a7a61] underline-offset-4 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2a46f]"
       onClick={openPreferences}
       type="button"
     >

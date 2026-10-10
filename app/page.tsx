@@ -458,8 +458,8 @@ export default function Home() {
               </svg>
             </AnalyticsLink>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 sm:gap-x-4">
-            <div className="flex min-h-11 items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1">
+            <div className="flex min-h-11 items-center gap-1">
               <a
                 href="https://github.com/aqs-group"
                 target="_blank"
