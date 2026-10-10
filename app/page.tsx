@@ -459,23 +459,26 @@ export default function Home() {
             </AnalyticsLink>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 sm:gap-x-4">
+            <div className="flex min-h-11 items-center gap-2">
+              <a
+                href="https://github.com/aqs-group"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Perfil da AqS Group no GitHub"
+                className="flex min-h-11 items-center gap-2 rounded-sm text-xs tracking-normal text-[#81796d] transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f]"
+              >
+                <Image
+                  src={publicAssetPath("/aqs-group-logo.png")}
+                  width={26}
+                  height={26}
+                  alt="AqS Group"
+                  className="rounded-sm"
+                />
+                <span className="whitespace-nowrap tracking-[0.02em]">Powered by AqS Group</span>
+              </a>
+              <span aria-hidden="true" className="text-[#81796d]">|</span>
+            </div>
             <PrivacyPreferencesButton />
-            <a
-              href="https://github.com/aqs-group"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Perfil da AqS Group no GitHub"
-              className="flex min-h-11 items-center gap-2 rounded-sm text-xs tracking-normal text-[#81796d] transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c2a46f] sm:border-l sm:border-[#6d6254] sm:pl-4"
-            >
-              <Image
-                src={publicAssetPath("/aqs-group-logo.png")}
-                width={26}
-                height={26}
-                alt="AqS Group"
-                className="rounded-sm"
-              />
-              <span className="whitespace-nowrap tracking-[0.02em]">Powered by AqS Group</span>
-            </a>
           </div>
         </div>
       </footer>
