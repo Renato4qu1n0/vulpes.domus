@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { publicAssetPath } from "../publicAssetPath";
 
 export const metadata: Metadata = {
   title: "Vulpes Domus | Cartão de contato",
@@ -224,6 +225,24 @@ export default function VcardPage() {
           <p className="mt-8 text-xs tracking-[0.15em] text-[#aaa198]">
             VULPES DOMUS · ARQUITETURA
           </p>
+          <a
+            aria-label="Perfil da AqS Group no GitHub"
+            className="mx-auto mt-3 inline-flex min-h-11 items-center gap-2 rounded-sm text-xs tracking-normal text-[#81796d] transition hover:text-[#594321] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2a46f]"
+            href="https://github.com/aqs-group"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Image
+              alt="AqS Group"
+              className="rounded-sm"
+              height={26}
+              src={publicAssetPath("/aqs-group-logo.png")}
+              width={26}
+            />
+            <span className="whitespace-nowrap tracking-[0.02em]">
+              Powered by AqS Group
+            </span>
+          </a>
         </section>
       </article>
     </main>
