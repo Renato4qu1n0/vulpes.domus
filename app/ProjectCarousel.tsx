@@ -71,7 +71,7 @@ export default function ProjectCarousel() {
 
     const interval = window.setInterval(() => {
       setFirstImage((current) => (current + 1) % projectImages.length);
-    }, 5000);
+    }, 3000);
 
     return () => window.clearInterval(interval);
   }, [isPaused]);
@@ -135,24 +135,6 @@ export default function ProjectCarousel() {
         })}
       </div>
 
-      <div className="mt-5 flex items-center justify-center gap-5">
-        <button
-          aria-label="Imagens anteriores"
-          className="grid h-11 w-11 place-items-center rounded-full border border-[#8a7a61] text-xl text-[#6f552d] transition hover:bg-[#6f552d] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d]"
-          onClick={() => move(-1)}
-          type="button"
-        >
-          ←
-        </button>
-        <button
-          aria-label="Próximas imagens"
-          className="grid h-11 w-11 place-items-center rounded-full border border-[#8a7a61] text-xl text-[#6f552d] transition hover:bg-[#6f552d] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f552d]"
-          onClick={() => move(1)}
-          type="button"
-        >
-          →
-        </button>
-      </div>
     </div>
   );
 }
